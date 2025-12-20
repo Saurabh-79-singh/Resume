@@ -2,6 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('project-modal');
     const closeModalBtn = document.querySelector('.close-btn');
     const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach(n => n.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    }));
 
     viewDetailsBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -88,12 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCarousel();
             });
         }
+        
+        // Auto-slide functionality
+        if (carouselElement.closest('.project-card')) {
+            setInterval(() => {
+                currentIndex = (currentIndex < carouselItems.length - 1) ? currentIndex + 1 : 0;
+                updateCarousel();
+            }, 3000);
+        }
     }
 
     // Initialize all carousels on the page
     document.querySelectorAll('.pro-carousel').forEach(carousel => {
         setupCarousel(carousel);
     });
+
     closeModalBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });

@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saurabh Kumar - Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        
-
-    </style>
 </head>
 <body>
 
@@ -48,7 +44,7 @@
                     <a href="https://stackoverflow.com/users/23182189/saurabh-kumar?tab=profile" target="_blank">Stack Overflow</a>
                 </div>
             </div>
-            <img src="saurabh.JPG" alt="Saurabh Kumar" class="hero-image">
+            
         </section>
 
         <!-- About Me Section -->
@@ -351,75 +347,6 @@
        
     </footer>
 
-    <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-
-        document.querySelectorAll(".nav-menu a").forEach(n => n.addEventListener("click", () => {
-            navMenu.classList.remove("active");
-        }));
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const carousels = document.querySelectorAll('.pro-carousel');
-
-            carousels.forEach(carousel => {
-                const carouselInner = carousel.querySelector('.carousel-inner');
-                const prevButton = carousel.querySelector('.carousel-control.prev');
-                const nextButton = carousel.querySelector('.carousel-control.next');
-                let currentIndex = 0;
-                let items = carousel.querySelectorAll('.carousel-item');
-                const totalItems = items.length;
-
-                function updateCarousel() {
-                    const offset = -currentIndex * 100;
-                    carouselInner.style.transform = `translateX(${offset}%)`;
-                }
-
-                prevButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
-                    updateCarousel();
-                });
-
-                nextButton.addEventListener('click', () => {
-                    currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-                    updateCarousel();
-                });
-
-                // Auto-slide functionality
-                setInterval(() => {
-                    currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-                    updateCarousel();
-                }, 3000);
-            });
-
-            // Modal gallery functionality
-            const galleryButtons = document.querySelectorAll('.view-gallery-btn');
-            galleryButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const modal = document.getElementById(button.dataset.modalTarget);
-                    modal.style.display = 'block';
-                });
-            });
-
-            const closeButtons = document.querySelectorAll('.close-btn');
-            closeButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const modal = button.closest('.gallery-modal');
-                    modal.style.display = 'none';
-                });
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('gallery-modal')) {
-                    event.target.style.display = 'none';
-                }
-            });
-        });
-    </script>
     <script src="custome.js"></script>
 </body>
 </html>
