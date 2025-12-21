@@ -772,6 +772,18 @@
             border: 1px solid transparent;
         }
         
+        .project-links .btn.disabled {
+            background-color: var(--secondary-color);
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .project-links .btn.disabled:hover {
+            background-color: var(--secondary-color);
+            color: #6c757d;
+            border-color: var(--secondary-color);
+        }
+
         .project-links .btn-primary {
              background-color: var(--accent-color);
              color: var(--primary-color);
