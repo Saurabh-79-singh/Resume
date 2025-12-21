@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
+
     const modal = document.getElementById('project-modal');
     const closeModalBtn = document.querySelector('.close-btn');
     const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
