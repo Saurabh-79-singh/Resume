@@ -188,114 +188,45 @@
     text-align: center;
     flex-grow: 1;
 }
-/* Timeline Styles (Experience & Education) - Pro Level Design */
-.timeline {
-    position: relative;
-    padding: 30px 0; /* More vertical padding */
-    margin-top: 30px;
+/* Education Section */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%; /* Center the line */
-    width: 4px; /* Thicker line */
-    background: linear-gradient(to bottom, var(--accent-color) 0%, var(--primary-color) 100%); /* Gradient line */
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px; /* More space between items */
-    width: 50%; /* Items on one side of the line */
-    padding-right: 40px; /* Space for the marker and line */
-    box-sizing: border-box;
-}
-
-.timeline-item:nth-child(even) {
-    margin-left: 50%; /* Alternate items to the right */
-    padding-left: 40px;
-    padding-right: 0;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 20px; /* Larger marker */
-    height: 20px; /* Larger marker */
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    border: 4px solid var(--accent-color); /* Thicker border */
-    z-index: 1; /* Ensure marker is above the line */
-    top: 0px; /* Align with the top of the content card */
-    right: -12px; /* Re-position for larger marker */
-    transform: translateX(50%);
-    box-shadow: 0 0 0 4px var(--card-bg); /* "Glow" effect */
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.timeline-item:nth-child(even)::before {
-    left: -12px; /* Re-position for larger marker */
-    right: auto;
-    transform: translateX(-50%);
-}
-
-.timeline-content {
+.education-card {
     background-color: var(--card-bg);
-    padding: 30px; /* More padding */
-    border-radius: 12px; /* Slightly more rounded */
-    box-shadow: var(--shadow-hover); /* More pronounced shadow */
+    padding: 2rem;
+    border-radius: 15px;
     border: 1px solid var(--secondary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.timeline-item:hover .timeline-content {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(88, 166, 255, 0.2);
+    border-color: var(--accent-color);
 }
 
-.timeline-content h3 {
-    margin-top: 0;
-    margin-bottom: 10px; /* Consistent margin */
+.education-card h3 {
     color: var(--accent-color);
-    font-size: 1.5rem; /* Larger heading */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
-.timeline-content p {
-    color: var(--text-color);
-    line-height: 1.8; /* Improved readability */
-    margin-bottom: 8px; /* Consistent margin */
+.education-card .institution {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
-.timeline-content p:last-child {
-    margin-bottom: 0; /* No margin after last paragraph */
+.education-card .duration {
+    color: var(--text-color-light);
+    margin-bottom: 0.5rem;
 }
 
-/* Responsive adjustments for timeline - Refined */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 20px; /* Keep line to the left */
-        transform: translateX(0);
-    }
-
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        width: 100%;
-        padding-left: 60px; /* Adjust padding for all items */
-        padding-right: 0;
-        margin-left: 0;
-    }
-
-    .timeline-item::before,
-    .timeline-item:nth-child(even)::before {
-        left: 10px; /* Align markers with the new line position */
-        right: auto;
-        transform: translateX(0);
-        top: 10px; /* Adjust top for single column */
-    }
+.education-card .grade {
+    font-style: italic;
 }
 
 /* Certifications Section Styles */
